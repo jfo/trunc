@@ -7,12 +7,12 @@ require 'json'
 
 get("/") do
 
-  # @list = Trie.new
-  # @list.populate
-  # @list.second_pop
+  @list = Trie.new
+  @list.populate
+  @list.second_pop
+
   db = Redis.new
-  # db.set "jeff", @list.to_json
-  @list = {"hi"=>{}}
+  db.set "jeff", @list.to_json
   db.set "jeff", @list.to_json
 
   erb :index
